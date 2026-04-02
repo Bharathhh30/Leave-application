@@ -20,13 +20,13 @@ function ApplyLeave({ setPage, user, setUser }) {
 
   const submitLeave = async () => {
     try {
-      await axios.post("http://localhost:8081/api/leaves/apply", {
+      await axios.post("https://backend-1-8nwr.onrender.com/api/leaves/apply", {
         email: user.email,
         startDate: startDate,
         endDate: endDate,
         reason: reason
       });
-
+      console.log(res.data); 
       alert("Leave Applied Successfully");
       setPage("dashboard");
     } catch (error) {
