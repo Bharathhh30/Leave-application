@@ -8,14 +8,14 @@ function ManageLeaves({ setPage, setUser }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/leaves/all")
+      .get("https://backend-1-8nwr.onrender.com/api/leaves/all")
       .then((res) => setLeaves(res.data));
   }, []);
 
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:8081/api/leaves/${id}/${status}`
+        `https://backend-1-8nwr.onrender.com/api/leaves/${id}/${status}`
       );
 
       setLeaves(

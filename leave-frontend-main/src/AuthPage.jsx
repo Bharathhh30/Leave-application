@@ -14,14 +14,14 @@ function AuthPage({ onLogin }) {
     try {
       if (isLogin) {
         const res = await axios.post(
-          "http://localhost:8081/api/users/login",
+          "https://backend-1-8nwr.onrender.com/api/users/login",
           { email, password, role }
         );
 
         onLogin(res.data);
       } else {
         await axios.post(
-          "http://localhost:8081/api/users/register",
+          "https://backend-1-8nwr.onrender.com/api/users/register",
           { email, password, role }
         );
 

@@ -14,7 +14,7 @@ function ManagerDashboard({ setPage, setUser }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/leaves/stats")
+      .get("https://backend-1-8nwr.onrender.com/api/leaves/stats")
       .then((res) => setStats(res.data))
       .catch((err) => console.error(err));
   }, []);

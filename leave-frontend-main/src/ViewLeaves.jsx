@@ -8,7 +8,7 @@ function ViewLeaves({ setPage, user, setUser }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8081/api/leaves/${user.email}`)
+      .get(`http://https://backend-1-8nwr.onrender.com/api/leaves/${user.email}`)
       .then((res) => setLeaves(res.data));
   }, []);
 

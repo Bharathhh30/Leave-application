@@ -8,7 +8,7 @@ function LeaveBalance({ user, setPage, setUser }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8081/api/leaves/balance/${user.email}`)
+      .get(`https://backend-1-8nwr.onrender.com/api/leaves/balance/${user.email}`)
       .then((res) => setBalance(res.data));
   }, []);
 
