@@ -19,21 +19,26 @@ function ApplyLeave({ setPage, user, setUser }) {
   };
 
   const submitLeave = async () => {
-    try {
-      await axios.post("https://backend-1-8nwr.onrender.com/api/leaves/apply", {
+  try {
+    const res = await axios.post(
+      "https://backend-1-8nwr.onrender.com/api/leaves/apply",
+      {
         email: user.email,
-        startDate: startDate,
-        endDate: endDate,
-        reason: reason
-      });
-      console.log(res.data); 
-      alert("Leave Applied Successfully");
-      setPage("dashboard");
-    } catch (error) {
-      console.error(error);
-      alert("Error applying leave");
-    }
-  };
+        startDate,
+        endDate,
+        reason
+      }
+    );
+
+    console.log(res.data); 
+    alert("Leave Applied Successfully");
+    setPage("dashboard");
+
+  } catch (error) {
+    console.error(error);
+    alert("Error applying leave");
+  }
+};
 
   return (
     <>
